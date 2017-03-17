@@ -66,6 +66,24 @@ void printList(node *root){
 	}
 }
 
+void invertList(node *&root){
+	node *current = root;
+	node *previous, *next;
+	if(current != NULL){
+		previous = current;
+		next = current->next;
+		current->next = NULL;
+		current = next;
+		while(current != NULL){
+			next = current->next;
+			current->next = previous;
+			previous = current;
+			current = next;
+		}
+		root = previous;
+	}
+}
+
 int main(){
 	node *first = new node;
 	first->value = 24;
@@ -83,12 +101,22 @@ int main(){
 	cout << "first print: " << "\n";
 	printList(first);
 
+	invertList(first);
+	
+	cout << "Inverted List: " << "\n";
+	printList(first);
+
 	removeValue(1,first);
 	removeValue(24,first);
 	
 	cout << "second print: " << "\n";
 	printList(first);
 
+	invertList(first);
+	
+	cout << "Inverted List: " << "\n";
+	printList(first);
+	
 	removeFirst(first);
 	removeFirst(first);
 	removeFirst(first);
@@ -97,9 +125,19 @@ int main(){
 	cout << "third print: " << "\n";
 	printList(first);
 	
+	invertList(first);
+	
+	cout << "Inverted List: " << "\n";
+	printList(first);
+	
 	insertEnd(24,first);
 	insertBegin(23,first);
 	
 	cout << "fourth print: " << "\n";
+	printList(first);
+	
+	invertList(first);
+	
+	cout << "Inverted List: " << "\n";
 	printList(first);
 }
