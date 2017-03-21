@@ -30,7 +30,7 @@ class stack{
 	
 	int pop(){
 		if(position > -1){
-			if(position <= size/4){
+			if(position <= size/4 && position > 0){
 				size/=2;
 				values = (int*) realloc(values, sizeof(int)*size);
 			}
@@ -66,6 +66,7 @@ int main(){
 	cout << (first.isEmpty()?"Pilha vazia":"Pilha não vazia") << endl;
 	first.pop();
 	first.push(1);
+	first.pop();
 	first.info();
 
 	first.push(2);

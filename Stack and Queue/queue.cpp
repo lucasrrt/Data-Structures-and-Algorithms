@@ -60,6 +60,12 @@ class queue{
 			return -1;
 	}
 
+	void popAll(){
+		while(!isEmpty()){
+			cout << pop() << endl;
+		}
+	}
+
 };
 
 int main(){
@@ -68,44 +74,15 @@ int main(){
 	cout << first.peek() << endl;
 
 	first.push(1);
-	cout << "peek: " << first.peek() << endl;
 	first.push(2);
 	first.push(3);
-	cout  << "peek: " << first.peek() << endl;
 	first.push(4);
 	first.push(5);
 	first.push(6);
-	cout  << "peek: " << first.peek() << endl;
 	first.push(7);
 	first.push(8);
-
-	first.push(9);
-	cout << first.peek() << endl;
 	
-	cout << "Testando saídas: \n";
+	first.popAll();
 
-	cout << first.pop() << endl;
-	cout << "peek: "  << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout << "peek: "  << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	cout << first.pop() << endl;
-	cout  << "peek: " << first.peek() << endl;
-	
 	return 0;
 }
