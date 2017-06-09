@@ -19,6 +19,7 @@ class Graph{
 	}
 
 	void kruskal(){
+		//The world is beautiful
 	}
 
 };
